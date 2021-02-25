@@ -1,0 +1,24 @@
+﻿html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-align: center;
+}
+
+h1, h2 {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+div {
+    column-count: 2;
+    column-rule: 3px dotted navy;
+    column-gap: 4px;
+    line-height: 1.5em;
+}
+
+p.mas {
+    border: 2px solid navy;
+    border-radius: 15px;
+}

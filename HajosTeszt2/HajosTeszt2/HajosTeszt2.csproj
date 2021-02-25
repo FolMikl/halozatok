@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8f10b8eb-7f42-4505-a1f1-071d7fd74d57</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\StyleSheet.css" />
+  </ItemGroup>
 
 </Project>
