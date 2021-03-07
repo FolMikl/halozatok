@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\cv2.html" />
     <None Include="wwwroot\StyleSheet.css" />
   </ItemGroup>
 
