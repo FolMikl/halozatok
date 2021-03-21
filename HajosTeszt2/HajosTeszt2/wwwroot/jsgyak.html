@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+        .sorbarendez {
+            display:flex;
+            flex-direction: row;
+            height: 30px;
+            width: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="ide"></div>"
+    <div id="masik"></div>
+    <script>
+        let hova = document.getElementById("ide")
+        for (var i = 0; i < 10; i++) {
+            let sor = document.createElement("div")
+            hova.appendChild(sor)
+            sor.innerText = i + 1;
+            sor.style.backgroundColor = `rgb(${255 - 255 / 10 * i}, 0, 120)`
+            sor.style.color = "rgb(130, 230, 130)";
+            sor.classList.add("sorbarendez")
+        }
+
+        let ezmi = document.getElementById("masik")
+        for (var sor = 0; sor < 10; sor++) {
+            let sor = document.getElementById("div")
+            ezmi.appendChild(sor)
+            for (var oszlop = 0; oszlop < sor; oszlop++) {
+                let szám = document.createElement("div")
+                sor.appendChild(szám)
+                szám.innerText = faktorialisR(sor) / (faktorialisR(oszlop) * (faktorialisR(sor-oszlop)))
+            }
+        }
+
+        var faktorialisR = (n) => {
+            if (n===0 ||n===1) {
+                return 1;
+            }
+            else {
+                return n * faktorialisR(n - 1);
+            }
+        }
+    </script>
+</body>
+</html>
