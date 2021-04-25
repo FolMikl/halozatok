@@ -1,3 +1,25 @@
+fetch('/questions/1')
+    .then(response => response.json())
+    .then(data => kérdésMegjelenítés(data)
+    );
 
-Valamiért, amikor ide átraktam a script tag-en belüli dolgokat ide, akkor az elsõ rész sem mûködött. Próbáltam, hogy hozzáadom, az onload-hoz, akkor nem hiba üzenetet dobott vissza az F12-õs résznél, de nem látszódott semmi.
-Illetve a css-nél olyan, mintha csak részben mûködne, tehát érzékeli az id-t, de a flex tulajdonságot már nem rakja át sorba.
+function kérdésMegjelenítés(kérdés) {
+    console.log(kérdés);
+    document.getElementById("kérdés_szöveg").innerText = kérdés.questionText
+    document.getElementById("válasz1").innerText = kérdés.answer1
+    document.getElementById("válasz2").innerText = kérdés.answer2
+    document.getElementById("válasz3").innerText = kérdés.answer3
+    document.getElementById("kép").src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
+}
+function kérdésBetöltés(id) {
+    fetch(`/questions/${id}`)
+        .then(response => {
+            if (!response.ok) {
+                console.error(`Hibás válasz: ${response.status}`)
+            }
+            else {
+                return response.json()
+            }
+        })
+        .then(data => kérdésMegjelenítés(data));
+}    
